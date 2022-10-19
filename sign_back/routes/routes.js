@@ -1,11 +1,11 @@
 const { request, response } = require('express');
 const express = require('express');
 const router = express.Router();
-const signUpSchema= require('../models/SignUpSchema.js')
-
+const SignUpSchema= require('../models/SignUpSchema.js')
+//const SignInSchema = require('../models/SignInSchema')
 
 router.post('/signup', (req, res) => {
-    const actualUser = new signUpSchema({
+    const actualUser = new SignUpSchema({
         fullName: req.body.fullName,
         userName: req.body.userName,
         email:    req.body.email,
@@ -21,5 +21,14 @@ router.post('/signup', (req, res) => {
         
     })
 })
-
+ /* 
+router.post('/singin', (req, res)) => { 
+    const signedUser = new SignInSchema({
+        
+    })
+}
+ 
+ */
 module.exports = router;
+
+
